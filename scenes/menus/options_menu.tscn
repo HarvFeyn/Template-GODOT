@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cc4pehuj7c687"]
+
+[ext_resource type="Script" uid="uid://co0rh6bcbrqt2" path="res://scripts/options_menu.gd" id="1_bp0ux"]
+
+[node name="OptionsMenu" type="Control" unique_id=680111902]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bp0ux")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1811136056]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -74.5
+offset_right = 20.0
+offset_bottom = 74.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Master" type="Label" parent="VBoxContainer" unique_id=825388496]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Master"
+
+[node name="MasterSlider" type="HSlider" parent="VBoxContainer" unique_id=358015411]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="Music" type="Label" parent="VBoxContainer" unique_id=1172842248]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Music Volume"
+
+[node name="MusicSlider" type="HSlider" parent="VBoxContainer" unique_id=1930915281]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="SFX" type="Label" parent="VBoxContainer" unique_id=1624463233]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="VBoxContainer" unique_id=1886987043]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="FullscreenCheckBox" type="CheckBox" parent="VBoxContainer" unique_id=289630213]
+layout_mode = 2
+text = "Full screen"
+
+[node name="BackButton" type="Button" parent="VBoxContainer" unique_id=320700031]
+layout_mode = 2
+text = "Back"
+
+[connection signal="value_changed" from="VBoxContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="toggled" from="VBoxContainer/FullscreenCheckBox" to="." method="_on_fullscreen_check_box_toggled"]
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
