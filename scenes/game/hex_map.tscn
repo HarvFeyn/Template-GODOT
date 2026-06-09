@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cg82vg4wnbga0"]
+
+[ext_resource type="Script" uid="uid://nkhc23yrldv7" path="res://scripts/hex_map.gd" id="1_2w7ml"]
+
+[sub_resource type="Environment" id="Environment_2w7ml"]
+ambient_light_source = 2
+ambient_light_color = Color(0.9515795, 0.95157963, 0.9515795, 1)
+ambient_light_energy = 0.3
+
+[node name="HexMap" type="Node3D" unique_id=625544506]
+script = ExtResource("1_2w7ml")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1998902324]
+transform = Transform3D(1, 0, 0, 0, 0.34202015, 0.9396926, 0, -0.9396926, 0.34202015, 0, 12, 10)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2112704674]
+transform = Transform3D(0.8660254, 0.35355338, -0.35355338, 0, 0.70710677, 0.70710677, 0.5, -0.6123724, 0.6123724, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=536362670]
+environment = SubResource("Environment_2w7ml")

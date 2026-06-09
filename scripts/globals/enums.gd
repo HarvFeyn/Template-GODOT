@@ -7,3 +7,10 @@ enum SceneExitBehavior {
 }
 
 enum OptionsContext { MAIN_MENU, PAUSE_MENU }
+
+enum TileType {
+	GRASS,
+	WATER,
+	MOUNTAIN,
+	FOREST,
+}
